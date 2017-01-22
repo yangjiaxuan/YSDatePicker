@@ -1,0 +1,568 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45FCAD501E307DC800B59503 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FCAD4F1E307DC800B59503 /* main.m */; };
+		45FCAD531E307DC800B59503 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FCAD521E307DC800B59503 /* AppDelegate.m */; };
+		45FCAD561E307DC800B59503 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FCAD551E307DC800B59503 /* ViewController.m */; };
+		45FCAD591E307DC800B59503 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FCAD571E307DC800B59503 /* Main.storyboard */; };
+		45FCAD5B1E307DC800B59503 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45FCAD5A1E307DC800B59503 /* Assets.xcassets */; };
+		45FCAD5E1E307DC800B59503 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FCAD5C1E307DC800B59503 /* LaunchScreen.storyboard */; };
+		45FCAD691E307DC800B59503 /* YSDatePickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FCAD681E307DC800B59503 /* YSDatePickerTests.m */; };
+		45FCAD741E307DC800B59503 /* YSDatePickerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FCAD731E307DC800B59503 /* YSDatePickerUITests.m */; };
+		45FCAD841E307DFE00B59503 /* YSDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FCAD831E307DFE00B59503 /* YSDatePicker.m */; };
+		45FCAD871E3087C500B59503 /* YSDatePickerDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FCAD861E3087C500B59503 /* YSDatePickerDataManager.m */; };
+		45FCAD8A1E3087FA00B59503 /* YSDatePickerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FCAD891E3087FA00B59503 /* YSDatePickerItem.m */; };
+		45FCAD8D1E30884000B59503 /* YSDatePickerItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FCAD8C1E30884000B59503 /* YSDatePickerItemModel.m */; };
+		45FCAD901E309EC300B59503 /* NSDate+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FCAD8F1E309EC300B59503 /* NSDate+Extend.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		45FCAD651E307DC800B59503 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45FCAD431E307DC800B59503 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45FCAD4A1E307DC800B59503;
+			remoteInfo = YSDatePicker;
+		};
+		45FCAD701E307DC800B59503 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45FCAD431E307DC800B59503 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45FCAD4A1E307DC800B59503;
+			remoteInfo = YSDatePicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		45FCAD4B1E307DC800B59503 /* YSDatePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSDatePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45FCAD4F1E307DC800B59503 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		45FCAD511E307DC800B59503 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		45FCAD521E307DC800B59503 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		45FCAD541E307DC800B59503 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		45FCAD551E307DC800B59503 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		45FCAD581E307DC800B59503 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		45FCAD5A1E307DC800B59503 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		45FCAD5D1E307DC800B59503 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		45FCAD5F1E307DC800B59503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45FCAD641E307DC800B59503 /* YSDatePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YSDatePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45FCAD681E307DC800B59503 /* YSDatePickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSDatePickerTests.m; sourceTree = "<group>"; };
+		45FCAD6A1E307DC800B59503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45FCAD6F1E307DC800B59503 /* YSDatePickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YSDatePickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45FCAD731E307DC800B59503 /* YSDatePickerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSDatePickerUITests.m; sourceTree = "<group>"; };
+		45FCAD751E307DC800B59503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45FCAD821E307DFE00B59503 /* YSDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDatePicker.h; sourceTree = "<group>"; };
+		45FCAD831E307DFE00B59503 /* YSDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDatePicker.m; sourceTree = "<group>"; };
+		45FCAD851E3087C500B59503 /* YSDatePickerDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDatePickerDataManager.h; sourceTree = "<group>"; };
+		45FCAD861E3087C500B59503 /* YSDatePickerDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDatePickerDataManager.m; sourceTree = "<group>"; };
+		45FCAD881E3087FA00B59503 /* YSDatePickerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDatePickerItem.h; sourceTree = "<group>"; };
+		45FCAD891E3087FA00B59503 /* YSDatePickerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDatePickerItem.m; sourceTree = "<group>"; };
+		45FCAD8B1E30884000B59503 /* YSDatePickerItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDatePickerItemModel.h; sourceTree = "<group>"; };
+		45FCAD8C1E30884000B59503 /* YSDatePickerItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDatePickerItemModel.m; sourceTree = "<group>"; };
+		45FCAD8E1E309EC300B59503 /* NSDate+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extend.h"; sourceTree = "<group>"; };
+		45FCAD8F1E309EC300B59503 /* NSDate+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extend.m"; sourceTree = "<group>"; };
+		45FCAD911E30A7B800B59503 /* YSDatePickerDataDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSDatePickerDataDefine.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45FCAD481E307DC800B59503 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45FCAD611E307DC800B59503 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45FCAD6C1E307DC800B59503 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45FCAD421E307DC800B59503 = {
+			isa = PBXGroup;
+			children = (
+				45FCAD4D1E307DC800B59503 /* YSDatePicker */,
+				45FCAD671E307DC800B59503 /* YSDatePickerTests */,
+				45FCAD721E307DC800B59503 /* YSDatePickerUITests */,
+				45FCAD4C1E307DC800B59503 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		45FCAD4C1E307DC800B59503 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45FCAD4B1E307DC800B59503 /* YSDatePicker.app */,
+				45FCAD641E307DC800B59503 /* YSDatePickerTests.xctest */,
+				45FCAD6F1E307DC800B59503 /* YSDatePickerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45FCAD4D1E307DC800B59503 /* YSDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				45FCAD811E307DE200B59503 /* YSDatePicker */,
+				45FCAD511E307DC800B59503 /* AppDelegate.h */,
+				45FCAD521E307DC800B59503 /* AppDelegate.m */,
+				45FCAD541E307DC800B59503 /* ViewController.h */,
+				45FCAD551E307DC800B59503 /* ViewController.m */,
+				45FCAD571E307DC800B59503 /* Main.storyboard */,
+				45FCAD5A1E307DC800B59503 /* Assets.xcassets */,
+				45FCAD5C1E307DC800B59503 /* LaunchScreen.storyboard */,
+				45FCAD5F1E307DC800B59503 /* Info.plist */,
+				45FCAD4E1E307DC800B59503 /* Supporting Files */,
+			);
+			path = YSDatePicker;
+			sourceTree = "<group>";
+		};
+		45FCAD4E1E307DC800B59503 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				45FCAD4F1E307DC800B59503 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45FCAD671E307DC800B59503 /* YSDatePickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				45FCAD681E307DC800B59503 /* YSDatePickerTests.m */,
+				45FCAD6A1E307DC800B59503 /* Info.plist */,
+			);
+			path = YSDatePickerTests;
+			sourceTree = "<group>";
+		};
+		45FCAD721E307DC800B59503 /* YSDatePickerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				45FCAD731E307DC800B59503 /* YSDatePickerUITests.m */,
+				45FCAD751E307DC800B59503 /* Info.plist */,
+			);
+			path = YSDatePickerUITests;
+			sourceTree = "<group>";
+		};
+		45FCAD811E307DE200B59503 /* YSDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				45FCAD821E307DFE00B59503 /* YSDatePicker.h */,
+				45FCAD831E307DFE00B59503 /* YSDatePicker.m */,
+				45FCAD881E3087FA00B59503 /* YSDatePickerItem.h */,
+				45FCAD891E3087FA00B59503 /* YSDatePickerItem.m */,
+				45FCAD8B1E30884000B59503 /* YSDatePickerItemModel.h */,
+				45FCAD8C1E30884000B59503 /* YSDatePickerItemModel.m */,
+				45FCAD851E3087C500B59503 /* YSDatePickerDataManager.h */,
+				45FCAD861E3087C500B59503 /* YSDatePickerDataManager.m */,
+				45FCAD911E30A7B800B59503 /* YSDatePickerDataDefine.h */,
+				45FCAD8E1E309EC300B59503 /* NSDate+Extend.h */,
+				45FCAD8F1E309EC300B59503 /* NSDate+Extend.m */,
+			);
+			path = YSDatePicker;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		45FCAD4A1E307DC800B59503 /* YSDatePicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45FCAD781E307DC800B59503 /* Build configuration list for PBXNativeTarget "YSDatePicker" */;
+			buildPhases = (
+				45FCAD471E307DC800B59503 /* Sources */,
+				45FCAD481E307DC800B59503 /* Frameworks */,
+				45FCAD491E307DC800B59503 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YSDatePicker;
+			productName = YSDatePicker;
+			productReference = 45FCAD4B1E307DC800B59503 /* YSDatePicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		45FCAD631E307DC800B59503 /* YSDatePickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45FCAD7B1E307DC800B59503 /* Build configuration list for PBXNativeTarget "YSDatePickerTests" */;
+			buildPhases = (
+				45FCAD601E307DC800B59503 /* Sources */,
+				45FCAD611E307DC800B59503 /* Frameworks */,
+				45FCAD621E307DC800B59503 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45FCAD661E307DC800B59503 /* PBXTargetDependency */,
+			);
+			name = YSDatePickerTests;
+			productName = YSDatePickerTests;
+			productReference = 45FCAD641E307DC800B59503 /* YSDatePickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		45FCAD6E1E307DC800B59503 /* YSDatePickerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45FCAD7E1E307DC800B59503 /* Build configuration list for PBXNativeTarget "YSDatePickerUITests" */;
+			buildPhases = (
+				45FCAD6B1E307DC800B59503 /* Sources */,
+				45FCAD6C1E307DC800B59503 /* Frameworks */,
+				45FCAD6D1E307DC800B59503 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45FCAD711E307DC800B59503 /* PBXTargetDependency */,
+			);
+			name = YSDatePickerUITests;
+			productName = YSDatePickerUITests;
+			productReference = 45FCAD6F1E307DC800B59503 /* YSDatePickerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45FCAD431E307DC800B59503 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = sitemap;
+				TargetAttributes = {
+					45FCAD4A1E307DC800B59503 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					45FCAD631E307DC800B59503 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 45FCAD4A1E307DC800B59503;
+					};
+					45FCAD6E1E307DC800B59503 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 45FCAD4A1E307DC800B59503;
+					};
+				};
+			};
+			buildConfigurationList = 45FCAD461E307DC800B59503 /* Build configuration list for PBXProject "YSDatePicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 45FCAD421E307DC800B59503;
+			productRefGroup = 45FCAD4C1E307DC800B59503 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45FCAD4A1E307DC800B59503 /* YSDatePicker */,
+				45FCAD631E307DC800B59503 /* YSDatePickerTests */,
+				45FCAD6E1E307DC800B59503 /* YSDatePickerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		45FCAD491E307DC800B59503 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45FCAD5E1E307DC800B59503 /* LaunchScreen.storyboard in Resources */,
+				45FCAD5B1E307DC800B59503 /* Assets.xcassets in Resources */,
+				45FCAD591E307DC800B59503 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45FCAD621E307DC800B59503 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45FCAD6D1E307DC800B59503 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45FCAD471E307DC800B59503 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45FCAD8D1E30884000B59503 /* YSDatePickerItemModel.m in Sources */,
+				45FCAD561E307DC800B59503 /* ViewController.m in Sources */,
+				45FCAD841E307DFE00B59503 /* YSDatePicker.m in Sources */,
+				45FCAD8A1E3087FA00B59503 /* YSDatePickerItem.m in Sources */,
+				45FCAD901E309EC300B59503 /* NSDate+Extend.m in Sources */,
+				45FCAD531E307DC800B59503 /* AppDelegate.m in Sources */,
+				45FCAD501E307DC800B59503 /* main.m in Sources */,
+				45FCAD871E3087C500B59503 /* YSDatePickerDataManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45FCAD601E307DC800B59503 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45FCAD691E307DC800B59503 /* YSDatePickerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45FCAD6B1E307DC800B59503 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45FCAD741E307DC800B59503 /* YSDatePickerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45FCAD661E307DC800B59503 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45FCAD4A1E307DC800B59503 /* YSDatePicker */;
+			targetProxy = 45FCAD651E307DC800B59503 /* PBXContainerItemProxy */;
+		};
+		45FCAD711E307DC800B59503 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45FCAD4A1E307DC800B59503 /* YSDatePicker */;
+			targetProxy = 45FCAD701E307DC800B59503 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		45FCAD571E307DC800B59503 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45FCAD581E307DC800B59503 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		45FCAD5C1E307DC800B59503 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45FCAD5D1E307DC800B59503 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		45FCAD761E307DC800B59503 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		45FCAD771E307DC800B59503 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		45FCAD791E307DC800B59503 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YSDatePicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sitemap.YSDatePicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		45FCAD7A1E307DC800B59503 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YSDatePicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sitemap.YSDatePicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		45FCAD7C1E307DC800B59503 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = YSDatePickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sitemap.YSDatePickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YSDatePicker.app/YSDatePicker";
+			};
+			name = Debug;
+		};
+		45FCAD7D1E307DC800B59503 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = YSDatePickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sitemap.YSDatePickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YSDatePicker.app/YSDatePicker";
+			};
+			name = Release;
+		};
+		45FCAD7F1E307DC800B59503 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = YSDatePickerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sitemap.YSDatePickerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = YSDatePicker;
+			};
+			name = Debug;
+		};
+		45FCAD801E307DC800B59503 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = YSDatePickerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sitemap.YSDatePickerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = YSDatePicker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45FCAD461E307DC800B59503 /* Build configuration list for PBXProject "YSDatePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45FCAD761E307DC800B59503 /* Debug */,
+				45FCAD771E307DC800B59503 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45FCAD781E307DC800B59503 /* Build configuration list for PBXNativeTarget "YSDatePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45FCAD791E307DC800B59503 /* Debug */,
+				45FCAD7A1E307DC800B59503 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		45FCAD7B1E307DC800B59503 /* Build configuration list for PBXNativeTarget "YSDatePickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45FCAD7C1E307DC800B59503 /* Debug */,
+				45FCAD7D1E307DC800B59503 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		45FCAD7E1E307DC800B59503 /* Build configuration list for PBXNativeTarget "YSDatePickerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45FCAD7F1E307DC800B59503 /* Debug */,
+				45FCAD801E307DC800B59503 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 45FCAD431E307DC800B59503 /* Project object */;
+}
