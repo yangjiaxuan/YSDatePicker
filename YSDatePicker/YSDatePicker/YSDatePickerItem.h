@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YSDatePickerItemModel.h"
 
 @interface YSDatePickerItem : UILabel
+
+@property (strong, nonatomic) YSDatePickerItemModel *itemModel;
 
 @end

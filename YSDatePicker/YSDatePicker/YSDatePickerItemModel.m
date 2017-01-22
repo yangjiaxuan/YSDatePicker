@@ -21,7 +21,8 @@
     if (self = [super init]) {
         self.title = @"";
         self.font  = [UIFont systemFontOfSize:15];
-        self.textColor = [UIColor blackColor];
+        self.textColor  = [UIColor grayColor];
+        self.isSelected = NO;
         self.selectedFont  = [UIFont systemFontOfSize:16];
         self.selectedTextColor = [UIColor blackColor];
     }
@@ -47,6 +48,7 @@
     YSDatePickerComponentModel *componentModel = [[YSDatePickerComponentModel alloc]init];
     componentModel->_componentType   = componentType;
     componentModel->_datePickerStyle = datePickerStyle;
+    [componentModel setupData];
     return componentModel;
 }
 
@@ -71,4 +73,20 @@
     }
 }
 
+- (void)selectedRowAtIndex:(NSInteger)index{
+    self->_selectedIndex = index;
+    [self deSelectedRowAtIndex:index];
+    [self changeItemState:YES withIndex:index];
+}
+
+- (void)deSelectedRowAtIndex:(NSInteger)index{
+    [self changeItemState:NO withIndex:index];
+}
+
+- (void)changeItemState:(BOOL)state withIndex:(NSInteger)index{
+    if (index < _itemModels.count) {
+        YSDatePickerItemModel *itemModel = [_itemModels objectAtIndex:index];
+        itemModel.isSelected = state;
+    }
+}
 @end

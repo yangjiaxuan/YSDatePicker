@@ -10,12 +10,29 @@
 
 @implementation YSDatePickerItem
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (instancetype)init{
+    if (self = [super init]) {
+        [self setUI];
+    }
+    return self;
 }
-*/
+
+- (void)setUI{
+
+    self.textAlignment = NSTextAlignmentCenter;
+}
+
+- (void)setItemModel:(YSDatePickerItemModel *)itemModel{
+    _itemModel = itemModel;
+    self.text = itemModel.title;
+    if (itemModel.isSelected) {
+        self.textColor = itemModel.selectedTextColor;
+        self.font      = itemModel.selectedFont;
+    }
+    else{
+        self.textColor = itemModel.textColor;
+        self.font      = itemModel.font;
+    }
+}
 
 @end

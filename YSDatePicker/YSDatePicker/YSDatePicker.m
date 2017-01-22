@@ -8,6 +8,7 @@
 
 #import "YSDatePicker.h"
 #import "NSDate+Extend.h"
+#import "YSDatePickerItem.h"
 #import "YSDatePickerItemModel.h"
 
 @interface YSDatePicker()<UIPickerViewDelegate, UIPickerViewDataSource>
@@ -78,43 +79,50 @@
     NSInteger min   = dateComponents.minute;
     NSInteger sec   = dateComponents.second;
     if (component == 100) {
+        
         if (_dataPickerDataManager.yearComponentIndex != DateComponentsNono) {
-            [self.datePicker selectRow:120           inComponent:_dataPickerDataManager.yearComponentIndex animated:NO];
+            [self datePickerSelectedRow:120 realRow:120 atComponent:_dataPickerDataManager.yearComponentIndex animated:NO];
         }
         if (_dataPickerDataManager.monthComponentIndex != DateComponentsNono){
-            [self.datePicker selectRow:month+12*10-1 inComponent:_dataPickerDataManager.monthComponentIndex animated:NO];
+            [self datePickerSelectedRow:month-1 realRow:month+12*10-1 atComponent:_dataPickerDataManager.monthComponentIndex animated:NO];
         }
         if (_dataPickerDataManager.dayComponentIndex != DateComponentsNono){
-            [self.datePicker selectRow:day+31*4-1    inComponent:_dataPickerDataManager.dayComponentIndex animated:NO];
+            [self datePickerSelectedRow:day-1 realRow:day+31*4-1 atComponent:_dataPickerDataManager.dayComponentIndex animated:NO];
         }
         if (_dataPickerDataManager.hourComponentIndex != DateComponentsNono){
-            [self.datePicker selectRow:hour + 24*5   inComponent:_dataPickerDataManager.hourComponentIndex animated:NO];
+            [self datePickerSelectedRow:hour realRow:hour + 24*5  atComponent:_dataPickerDataManager.hourComponentIndex animated:NO];
         }
         if (_dataPickerDataManager.minuteComponentIndex != DateComponentsNono){
-            [self.datePicker selectRow:min + 60      inComponent:_dataPickerDataManager.minuteComponentIndex animated:NO];
+            [self datePickerSelectedRow:min realRow:min + 60  atComponent:_dataPickerDataManager.minuteComponentIndex animated:NO];
         }
         if (_dataPickerDataManager.secondComponentIndex != DateComponentsNono){
-            [self.datePicker selectRow:min + 60      inComponent:_dataPickerDataManager.secondComponentIndex animated:NO];
+            [self datePickerSelectedRow:sec realRow:sec + 60  atComponent:_dataPickerDataManager.secondComponentIndex animated:NO];
         }
     }
     else if (component == _dataPickerDataManager.yearComponentIndex){
-        [self.datePicker selectRow:120           inComponent:component animated:NO];
+        [self datePickerSelectedRow:120 realRow:120 atComponent:_dataPickerDataManager.yearComponentIndex animated:NO];
     }
     else if (component == _dataPickerDataManager.monthComponentIndex){
-        [self.datePicker selectRow:month+12*10-1 inComponent:component animated:NO];
+        [self datePickerSelectedRow:month-1 realRow:month+12*10-1 atComponent:_dataPickerDataManager.monthComponentIndex animated:NO];
     }
-    else if (component == _dataPickerDataManager.yearComponentIndex){
-        [self.datePicker selectRow:day+31*4-1    inComponent:component animated:NO];
+    else if (component == _dataPickerDataManager.dayComponentIndex){
+        [self datePickerSelectedRow:day-1 realRow:day+31*4-1 atComponent:_dataPickerDataManager.dayComponentIndex animated:NO];
     }
-    else if (component == _dataPickerDataManager.yearComponentIndex){
-        [self.datePicker selectRow:hour + 24*5   inComponent:component animated:NO];
+    else if (component == _dataPickerDataManager.hourComponentIndex){
+        [self datePickerSelectedRow:hour realRow:hour + 24*5  atComponent:_dataPickerDataManager.hourComponentIndex animated:NO];
     }
-    else if (component == _dataPickerDataManager.yearComponentIndex){
-        [self.datePicker selectRow:min + 60      inComponent:component animated:NO];
+    else if (component == _dataPickerDataManager.minuteComponentIndex){
+        [self datePickerSelectedRow:min realRow:min + 60  atComponent:_dataPickerDataManager.minuteComponentIndex animated:NO];
     }
-    else if (component == _dataPickerDataManager.yearComponentIndex){
-        [self.datePicker selectRow:sec + 60      inComponent:component animated:NO];
+    else if (component == _dataPickerDataManager.secondComponentIndex){
+        [self datePickerSelectedRow:sec realRow:sec + 60  atComponent:_dataPickerDataManager.secondComponentIndex animated:NO];
     }
+}
+
+- (void)datePickerSelectedRow:(NSInteger)row realRow:(NSUInteger)realRow atComponent:(NSInteger)component animated:(BOOL)animated{
+    YSDatePickerComponentModel *componentModel = _dataArr[component];
+    [componentModel selectedRowAtIndex:row];
+    [self.datePicker selectRow:realRow           inComponent:component animated:NO];
 }
 
 #pragma mark ---  set get ---
@@ -163,23 +171,21 @@
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
 
-    if (![view isKindOfClass:[UILabel class]]) {
-        UILabel *titleLabel  = [[UILabel alloc]init];
-        titleLabel.font      = [UIFont systemFontOfSize:12];
-        titleLabel.textAlignment = NSTextAlignmentCenter;
-        titleLabel.textColor = [UIColor blackColor];
-        view = titleLabel;
+    if (![view isKindOfClass:[YSDatePickerItem class]]) {
+        YSDatePickerItem *item  = [[YSDatePickerItem alloc]init];
+        view = item;
     }
     YSDatePickerComponentModel *componentModel = _dataArr[component];
-    YSDatePickerItemModel *itemModel = [self getDateModelWithComponent:component row:row];
+    YSDatePickerItemModel      *itemModel      = [self getDateModelWithComponent:component row:row];
     view.frame = CGRectMake(0, 0, componentModel.componentWidth, componentModel.componentHeight);
-    [(UILabel *)view setText:itemModel.title];
+    [(YSDatePickerItem *)view setItemModel:itemModel];
     return view;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
 
     YSDatePickerItemModel *itemModel = [self getDateModelWithComponent:component row:row];
+    itemModel.isSelected = YES;
     if (self.datePickerStyle == YSDatePickerStyleNormal) {
         if (component == 0) {
             _year = [itemModel.title stringByReplacingOccurrencesOfString:@"年" withString:@""];
@@ -207,6 +213,9 @@
     NSDate *date = [NSDate dateFromDefaultDateFormatterWithDateStr:dateStr];
     self.date = date;
     [self setSelectedRowAndComponentWithDate:date  WithComponent:component];
+    if (self.dateSelectedAction) {
+        self.dateSelectedAction(date);
+    }
 }
 
 - (YSDatePickerItemModel *)getDateModelWithComponent:(NSInteger)component row:(NSInteger)row{
