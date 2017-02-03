@@ -31,7 +31,7 @@
 @property (assign, nonatomic) double componentWidth;
 
 @property (assign, nonatomic, readonly) YSDatePickerComponentType componentType;
-@property (assign, nonatomic, readonly) YSDatePickerStyle datePickerStyle;
+@property (assign, nonatomic) YSDatePickerStyle datePickerStyle;
 
 @property (strong, nonatomic) NSArray <YSDatePickerItemModel *>*itemModels;
 

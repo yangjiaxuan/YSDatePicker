@@ -41,6 +41,11 @@
 
 @end
 
+@interface YSDatePickerComponentModel()
+{
+    CGSize _datePickerSize;
+}
+@end
 @implementation YSDatePickerComponentModel
 
 + (instancetype)datePickerComponentModelWithCompontType:(YSDatePickerComponentType)componentType datePickerStyle:(YSDatePickerStyle)datePickerStyle  datePickerSize:(CGSize)datePickerSize{
@@ -48,7 +53,8 @@
     YSDatePickerComponentModel *componentModel = [[YSDatePickerComponentModel alloc]init];
     componentModel->_componentType   = componentType;
     componentModel->_datePickerStyle = datePickerStyle;
-    [componentModel setupDataWithDatePickerSize:datePickerSize];
+    componentModel->_datePickerSize  = datePickerSize;
+    [componentModel setupData];
     return componentModel;
 }
 
@@ -60,17 +66,29 @@
     return self;
 }
 
-- (void)setupDataWithDatePickerSize:(CGSize)datePickerSize{
+- (void)setupData{
 
-    CGFloat viewW = datePickerSize.width - 20;
-    if (self.datePickerStyle   == YSDatePickerStyleNormal) {
-        if (self.componentType == YSDatePickerComponentTypeYear) {
-            self.componentWidth = viewW * 5.0/17;
-        }
-        else{
-            self.componentWidth = viewW * 3.0/17;
-        }
+    NSArray *widthScaleArr = @[
+        @[@"0.294",@"0.176"],@[@"1.0",@"0.01"],   @[@"0.625",@"0.375"],
+        @[@"0.454",@"0.273"],@[@"0.357",@"0.214"],@[@"0.01",@"1.0"],
+        @[@"0.5",@"0.5"],    @[@"0.333",@"0.333"],@[@"0.25",@"0.25"],
+        @[@"0.2",@"0.2"],    @[@"0.01",@"1"],     @[@"0.5",@"0.5"],
+        @[@"0.333",@"0.333"],@[@"0.25",@"0.25"],  @[@"0.01",@"1.0"],
+        @[@"0.5",@"0.5"],    @[@"0.01",@"1.0"],   @[@"0.01",@"1.0"],
+        @[@"0.25",@"0.15"]
+        ];
+    CGFloat viewW = _datePickerSize.width - 20;
+    if (self.componentType == YSDatePickerComponentTypeYear) {
+        self.componentWidth = [[widthScaleArr[_datePickerStyle] firstObject] doubleValue] * viewW;
     }
+    else{
+        self.componentWidth = [[widthScaleArr[_datePickerStyle] objectAtIndex:1] doubleValue] * viewW;
+    }
+}
+
+- (void)setDatePickerStyle:(YSDatePickerStyle)datePickerStyle{
+    _datePickerStyle = datePickerStyle;
+    [self setupData];
 }
 
 - (void)selectedRowAtIndex:(NSInteger)index{

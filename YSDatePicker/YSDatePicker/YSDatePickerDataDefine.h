@@ -15,6 +15,24 @@
 typedef NS_ENUM(NSInteger, YSDatePickerStyle){
     
     YSDatePickerStyleNormal,
+    YSDatePickerStyleYear,
+    YSDatePickerStyleYearMonth,
+    YSDatePickerStyleYearMonthDay,
+    YSDatePickerStyleYearMonthDayHour,
+    YSDatePickerStyleMonth,
+    YSDatePickerStyleMonthDay,
+    YSDatePickerStyleMonthDayHour,
+    YSDatePickerStyleMonthDayHourMin,
+    YSDatePickerStyleMonthDayHourMinSec,
+    YSDatePickerStyleDay,
+    YSDatePickerStyleDayHour,
+    YSDatePickerStyleDayHourMin,
+    YSDatePickerStyleDayHourMinSec,
+    YSDatePickerStyleHour,
+    YSDatePickerStyleHourMin,
+    YSDatePickerStyleMin,
+    YSDatePickerStyleSec,
+    YSDatePickerStyleAll
 };
 
 typedef NS_ENUM(NSInteger, YSDatePickerComponentType){

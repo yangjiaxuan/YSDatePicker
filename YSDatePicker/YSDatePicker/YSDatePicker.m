@@ -186,26 +186,29 @@
 
     YSDatePickerItemModel *itemModel = [self getDateModelWithComponent:component row:row];
     itemModel.isSelected = YES;
-    if (self.datePickerStyle == YSDatePickerStyleNormal) {
-        if (component == 0) {
+//    if (self.datePickerStyle == YSDatePickerStyleNormal) {
+        if (component == _dataPickerDataManager.yearComponentIndex) {
             _year = [itemModel.title stringByReplacingOccurrencesOfString:@"年" withString:@""];
             [self selectedRightDay];
         }
-        else if (component == 1) {
+        else if (component == _dataPickerDataManager.monthComponentIndex) {
             _month = [itemModel.title stringByReplacingOccurrencesOfString:@"月" withString:@""];
             [self selectedRightDay];
         }
-        else if (component == 2){
+        else if (component == _dataPickerDataManager.dayComponentIndex){
             _day = [itemModel.title stringByReplacingOccurrencesOfString:@"日" withString:@""];
             [self selectedRightDay];
         }
-        else if (component == 3){
+        else if (component == _dataPickerDataManager.hourComponentIndex){
             _hour = [itemModel.title stringByReplacingOccurrencesOfString:@"时" withString:@""];
         }
-        else if (component == 4){
+        else if (component == _dataPickerDataManager.minuteComponentIndex){
             _min = [itemModel.title stringByReplacingOccurrencesOfString:@"分" withString:@""];
         }
-    }
+        else if (component == _dataPickerDataManager.secondComponentIndex){
+            _min = [itemModel.title stringByReplacingOccurrencesOfString:@"秒" withString:@""];
+        }
+//    }
     if ([_month isEqualToString:@"00"]) {
         _month = @"01";
     }

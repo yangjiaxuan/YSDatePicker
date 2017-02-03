@@ -242,6 +242,7 @@
 				TargetAttributes = {
 					45FCAD4A1E307DC800B59503 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = KJ4J9TVR8X;
 						ProvisioningStyle = Automatic;
 					};
 					45FCAD631E307DC800B59503 = {
@@ -462,6 +463,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KJ4J9TVR8X;
 				INFOPLIST_FILE = YSDatePicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sitemap.YSDatePicker;
@@ -473,6 +475,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KJ4J9TVR8X;
 				INFOPLIST_FILE = YSDatePicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sitemap.YSDatePicker;
