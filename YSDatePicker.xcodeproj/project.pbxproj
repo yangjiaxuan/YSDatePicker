@@ -160,6 +160,7 @@
 		45FCAD811E307DE200B59503 /* YSDatePicker */ = {
 			isa = PBXGroup;
 			children = (
+				45FCAD911E30A7B800B59503 /* YSDatePickerDataDefine.h */,
 				45FCAD821E307DFE00B59503 /* YSDatePicker.h */,
 				45FCAD831E307DFE00B59503 /* YSDatePicker.m */,
 				45FCAD881E3087FA00B59503 /* YSDatePickerItem.h */,
@@ -168,7 +169,6 @@
 				45FCAD8C1E30884000B59503 /* YSDatePickerItemModel.m */,
 				45FCAD851E3087C500B59503 /* YSDatePickerDataManager.h */,
 				45FCAD861E3087C500B59503 /* YSDatePickerDataManager.m */,
-				45FCAD911E30A7B800B59503 /* YSDatePickerDataDefine.h */,
 				45FCAD8E1E309EC300B59503 /* NSDate+Extend.h */,
 				45FCAD8F1E309EC300B59503 /* NSDate+Extend.m */,
 			);
@@ -545,6 +545,7 @@
 				45FCAD7A1E307DC800B59503 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		45FCAD7B1E307DC800B59503 /* Build configuration list for PBXNativeTarget "YSDatePickerTests" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +554,7 @@
 				45FCAD7D1E307DC800B59503 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		45FCAD7E1E307DC800B59503 /* Build configuration list for PBXNativeTarget "YSDatePickerUITests" */ = {
 			isa = XCConfigurationList;
@@ -561,6 +563,7 @@
 				45FCAD801E307DC800B59503 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

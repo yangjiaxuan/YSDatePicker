@@ -43,12 +43,12 @@
 
 @implementation YSDatePickerComponentModel
 
-+ (instancetype)datePickerComponentModelWithCompontType:(YSDatePickerComponentType)componentType datePickerStyle:(YSDatePickerStyle)datePickerStyle{
++ (instancetype)datePickerComponentModelWithCompontType:(YSDatePickerComponentType)componentType datePickerStyle:(YSDatePickerStyle)datePickerStyle  datePickerSize:(CGSize)datePickerSize{
 
     YSDatePickerComponentModel *componentModel = [[YSDatePickerComponentModel alloc]init];
     componentModel->_componentType   = componentType;
     componentModel->_datePickerStyle = datePickerStyle;
-    [componentModel setupData];
+    [componentModel setupDataWithDatePickerSize:datePickerSize];
     return componentModel;
 }
 
@@ -60,9 +60,9 @@
     return self;
 }
 
-- (void)setupData{
+- (void)setupDataWithDatePickerSize:(CGSize)datePickerSize{
 
-    CGFloat viewW = [UIScreen mainScreen].bounds.size.width - 20;
+    CGFloat viewW = datePickerSize.width - 20;
     if (self.datePickerStyle   == YSDatePickerStyleNormal) {
         if (self.componentType == YSDatePickerComponentTypeYear) {
             self.componentWidth = viewW * 5.0/17;

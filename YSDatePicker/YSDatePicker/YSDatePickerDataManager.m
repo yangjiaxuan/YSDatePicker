@@ -18,16 +18,18 @@
     NSMutableArray *_hourTitleArr;
     NSMutableArray *_minTitleArr;
     NSMutableArray *_secTitleArr;
+    
+    CGSize _datePickerSize;
 }
 @end
 
 @implementation YSDatePickerDataManager
 
-+ (instancetype)datePickerDataManagerWithStyle:(YSDatePickerStyle)style{
++ (instancetype)datePickerDataManagerWithStyle:(YSDatePickerStyle)style datePickerSize:(CGSize)datePickerSize{
 
     YSDatePickerDataManager *dateManager = [[YSDatePickerDataManager alloc]init];
     dateManager.datePickerStyle          = style;
-
+    dateManager->_datePickerSize = datePickerSize;
     return dateManager;
 }
 
@@ -80,23 +82,23 @@
     NSMutableArray *data = [NSMutableArray array];
     
     if (self.datePickerStyle == YSDatePickerStyleNormal) {
-        YSDatePickerComponentModel *compontModel = [YSDatePickerComponentModel datePickerComponentModelWithCompontType:YSDatePickerComponentTypeYear datePickerStyle:YSDatePickerStyleNormal];
+        YSDatePickerComponentModel *compontModel = [YSDatePickerComponentModel datePickerComponentModelWithCompontType:YSDatePickerComponentTypeYear datePickerStyle:YSDatePickerStyleNormal datePickerSize:_datePickerSize];
         compontModel.itemModels = [[self class] getYearArrayFromYear:[self.date?:[NSDate date] getYear]];
         [data addObject:compontModel];
         
-        compontModel = [YSDatePickerComponentModel datePickerComponentModelWithCompontType:YSDatePickerComponentTypeOther datePickerStyle:YSDatePickerStyleNormal];
+        compontModel = [YSDatePickerComponentModel datePickerComponentModelWithCompontType:YSDatePickerComponentTypeOther datePickerStyle:YSDatePickerStyleNormal datePickerSize:_datePickerSize];
         compontModel.itemModels = _monthTitleArr;
         [data addObject:compontModel];
         
-        compontModel = [YSDatePickerComponentModel datePickerComponentModelWithCompontType:YSDatePickerComponentTypeOther datePickerStyle:YSDatePickerStyleNormal];
+        compontModel = [YSDatePickerComponentModel datePickerComponentModelWithCompontType:YSDatePickerComponentTypeOther datePickerStyle:YSDatePickerStyleNormal datePickerSize:_datePickerSize];
         compontModel.itemModels = _dayTitleArr;
         [data addObject:compontModel];
         
-        compontModel = [YSDatePickerComponentModel datePickerComponentModelWithCompontType:YSDatePickerComponentTypeOther datePickerStyle:YSDatePickerStyleNormal];
+        compontModel = [YSDatePickerComponentModel datePickerComponentModelWithCompontType:YSDatePickerComponentTypeOther datePickerStyle:YSDatePickerStyleNormal datePickerSize:_datePickerSize];
         compontModel.itemModels = _hourTitleArr;
         [data addObject:compontModel];
         
-        compontModel = [YSDatePickerComponentModel datePickerComponentModelWithCompontType:YSDatePickerComponentTypeOther datePickerStyle:YSDatePickerStyleNormal];
+        compontModel = [YSDatePickerComponentModel datePickerComponentModelWithCompontType:YSDatePickerComponentTypeOther datePickerStyle:YSDatePickerStyleNormal datePickerSize:_datePickerSize];
         compontModel.itemModels = _minTitleArr;
         [data addObject:compontModel];
         

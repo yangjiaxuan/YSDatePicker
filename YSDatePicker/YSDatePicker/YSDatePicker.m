@@ -62,7 +62,7 @@
 
 - (void)createData{
     
-    _dataPickerDataManager = [YSDatePickerDataManager datePickerDataManagerWithStyle:_datePickerStyle];
+    _dataPickerDataManager = [YSDatePickerDataManager datePickerDataManagerWithStyle:_datePickerStyle datePickerSize:self.frame.size];
     _dataPickerDataManager.date = self.date;
     _dataArr = _dataPickerDataManager.datePickerData;
     [self.datePicker reloadAllComponents];
@@ -189,12 +189,15 @@
     if (self.datePickerStyle == YSDatePickerStyleNormal) {
         if (component == 0) {
             _year = [itemModel.title stringByReplacingOccurrencesOfString:@"年" withString:@""];
+            [self selectedRightDay];
         }
         else if (component == 1) {
             _month = [itemModel.title stringByReplacingOccurrencesOfString:@"月" withString:@""];
+            [self selectedRightDay];
         }
         else if (component == 2){
             _day = [itemModel.title stringByReplacingOccurrencesOfString:@"日" withString:@""];
+            [self selectedRightDay];
         }
         else if (component == 3){
             _hour = [itemModel.title stringByReplacingOccurrencesOfString:@"时" withString:@""];
@@ -241,6 +244,25 @@
         itemModel = [componentModel itemModels][row%60];
     }
     return itemModel;
+}
+
+// 检测当前的日期是否合法 不合法的话 向前推 找到合法的日期
+- (void)selectedRightDay{
+
+    NSInteger year  = _year.integerValue;
+    NSInteger month = _month.integerValue;
+    NSInteger day   = _day.integerValue;
+    if (month == 2) {
+        if (!(year % 4) && (year%100) && day > 29) {
+            _day = @"29";
+        }
+        else if (day > 28) {
+            _day = @"28";
+        }
+    }
+    else if((month == 4 || month == 6 || month == 9 || month == 11)&&(day > 30)){
+        _day = @"30";
+    }
 }
 
 @end

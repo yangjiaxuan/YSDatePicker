@@ -35,7 +35,7 @@
 
 @property (strong, nonatomic) NSArray <YSDatePickerItemModel *>*itemModels;
 
-+ (instancetype)datePickerComponentModelWithCompontType:(YSDatePickerComponentType)componentType datePickerStyle:(YSDatePickerStyle)datePickerStyle;
++ (instancetype)datePickerComponentModelWithCompontType:(YSDatePickerComponentType)componentType datePickerStyle:(YSDatePickerStyle)datePickerStyle datePickerSize:(CGSize)datePickerSize;
 
 - (void)selectedRowAtIndex:(NSInteger)index;
 - (void)deSelectedRowAtIndex:(NSInteger)index;

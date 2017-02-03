@@ -33,7 +33,8 @@
 + (NSDate *)dateFromDefaultDateFormatterWithDateStr:(NSString *)dateStr{
 
     NSDateFormatter *defaultFormatter = [self defaultDateFormatter];
-    return [self dateFromDateFormatter:defaultFormatter dateStr:dateStr];
+    NSDate *date = [self dateFromDateFormatter:defaultFormatter dateStr:dateStr];
+    return date?:[NSDate date];
 }
 
 + (NSDate *)dateFromDateFormatter:(NSDateFormatter *)dateFormatter dateStr:(NSString *)dateStr{

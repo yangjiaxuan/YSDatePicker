@@ -6,7 +6,7 @@
 //  Copyright © 2017年 sitemap. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "YSDatePickerDataDefine.h"
 
 @interface YSDatePickerDataManager : NSObject
@@ -22,7 +22,7 @@
 @property (strong, nonatomic) NSArray *datePickerData;
 @property (strong, nonatomic) NSDate *date;
 
-+ (instancetype)datePickerDataManagerWithStyle:(YSDatePickerStyle)style;
++ (instancetype)datePickerDataManagerWithStyle:(YSDatePickerStyle)style datePickerSize:(CGSize)datePickerSize;
 
 + (NSArray *)getYearArrayFromYear:(NSInteger)year;
 
