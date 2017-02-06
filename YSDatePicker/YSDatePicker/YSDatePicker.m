@@ -256,7 +256,7 @@
     NSInteger month = _month.integerValue;
     NSInteger day   = _day.integerValue;
     if (month == 2) {
-        if (!(year % 4) && (year%100) && day > 29) {
+        if (!(year % 4) && (year%100) && day >= 29) {
             _day = @"29";
         }
         else if (day > 28) {

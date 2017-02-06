@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    datePicker = [[YSDatePicker alloc]initWithFrame:(CGRect){{0, 100},{320,200}}];
+    datePicker = [[YSDatePicker alloc]initWithFrame:(CGRect){{0, 100},{self.view.frame.size.width,200}}];
 
     [self.view addSubview:datePicker];
 
